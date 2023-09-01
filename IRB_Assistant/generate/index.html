@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sites.uab.edu/periop-datascience/IRB_Assistant/generate/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>generate - FILL OUT</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "generate";
+        var mkdocs_page_input_path = "IRB_Assistant/generate.md";
+        var mkdocs_page_url = "/periop-datascience/IRB_Assistant/generate/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FILL OUT
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">workflows</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../main/">main</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">IRB_Assistant</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../data/">data</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">generate</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FILL OUT</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>IRB_Assistant &raquo;</li>
+      <li>generate</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+<a id="IRB_Assistant.generate"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="IRB_Assistant.generate.generate_overall_introduction" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_overall_introduction</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">abstracts</span><span class="p">,</span> <span class="n">help_type</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>generate_overall_introduction</code> takes a question, a list of abstracts, and a help type
+as input, and generates an overall introduction by summarizing the literature related to the
+question.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>question</strong> – The question you want to generate an overall introduction for.</p></li>
+            <li><p><strong>abstracts</strong> – The <code>abstracts</code> parameter is a list of abstracts from relevant literature sources.</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>These abstracts provide a summary of the research papers or articles related to the given question.
+  help_type: The <code>help_type</code> parameter is used to specify the type of help you are seeking. It can
+be a string that describes the specific type of assistance you need, such as "clarification",
+"summary", "analysis", or any other relevant description. This helps the AI understand the context
+and provide</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>The function <code>generate_overall_introduction</code> returns the overall introduction generated by the AI</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>      <p>model.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>IRB_Assistant/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_overall_introduction</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">abstracts</span><span class="p">,</span> <span class="n">help_type</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `generate_overall_introduction` takes a question, a list of abstracts, and a help type</span>
+<span class="sd">    as input, and generates an overall introduction by summarizing the literature related to the</span>
+<span class="sd">    question.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      question: The question you want to generate an overall introduction for.</span>
+<span class="sd">      abstracts: The `abstracts` parameter is a list of abstracts from relevant literature sources.</span>
+<span class="sd">    These abstracts provide a summary of the research papers or articles related to the given question.</span>
+<span class="sd">      help_type: The `help_type` parameter is used to specify the type of help you are seeking. It can</span>
+<span class="sd">    be a string that describes the specific type of assistance you need, such as &quot;clarification&quot;,</span>
+<span class="sd">    &quot;summary&quot;, &quot;analysis&quot;, or any other relevant description. This helps the AI understand the context</span>
+<span class="sd">    and provide</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The function `generate_overall_introduction` returns the overall introduction generated by the AI</span>
+<span class="sd">    model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="n">irb_assistant_prompts</span><span class="o">.</span><span class="n">SUMMARIZE_LITERATURE_PROMPT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">question</span><span class="p">,</span> <span class="n">help_type</span><span class="p">,</span> <span class="n">abstracts</span>
+    <span class="p">)</span>
+    <span class="n">chat</span> <span class="o">=</span> <span class="n">irb_assistant_config</span><span class="o">.</span><span class="n">CHAT</span>
+    <span class="k">with</span> <span class="n">get_openai_callback</span><span class="p">()</span> <span class="k">as</span> <span class="n">response_meta</span><span class="p">:</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">SystemMessage</span><span class="p">(</span>
+                <span class="n">content</span><span class="o">=</span><span class="s2">&quot;You are an expert at conducting medical literature searches. You help beginning researchers.&quot;</span>
+            <span class="p">),</span>
+            <span class="n">HumanMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">prompt</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">response_meta</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="IRB_Assistant.generate.generate_search_string" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_search_string</span><span class="p">(</span><span class="n">input_research_q</span><span class="p">,</span> <span class="n">loop_n</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">last_query</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The <code>generate_search_string</code> function takes an input research question, an optional loop number, and
+an optional last query. It generates a search string using OpenAI's ChatGPT model and returns the
+generated search string.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>input_research_q</strong> – The input research question that you want to generate a search string for.</p></li>
+            <li><p><strong>loop_n</strong> – The <code>loop_n</code> parameter is used to keep track of the number of times the search query has</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>been looped. It is an optional parameter with a default value of 0. Defaults to 0
+  last_query: The <code>last_query</code> parameter is a string that represents the previous search query that
+was executed. It is used in the <code>generate_search_string</code> function to provide context to the AI model
+about the previous search results. This can be helpful when the previous search did not yield many
+results and the user wants</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>The function <code>generate_search_string</code> returns a string that is generated by the OpenAI ChatGPT</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>      <p>model.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>IRB_Assistant/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_search_string</span><span class="p">(</span><span class="n">input_research_q</span><span class="p">,</span> <span class="n">loop_n</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">last_query</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The `generate_search_string` function takes an input research question, an optional loop number, and</span>
+<span class="sd">    an optional last query. It generates a search string using OpenAI&#39;s ChatGPT model and returns the</span>
+<span class="sd">    generated search string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      input_research_q: The input research question that you want to generate a search string for.</span>
+<span class="sd">      loop_n: The `loop_n` parameter is used to keep track of the number of times the search query has</span>
+<span class="sd">    been looped. It is an optional parameter with a default value of 0. Defaults to 0</span>
+<span class="sd">      last_query: The `last_query` parameter is a string that represents the previous search query that</span>
+<span class="sd">    was executed. It is used in the `generate_search_string` function to provide context to the AI model</span>
+<span class="sd">    about the previous search results. This can be helpful when the previous search did not yield many</span>
+<span class="sd">    results and the user wants</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The function `generate_search_string` returns a string that is generated by the OpenAI ChatGPT</span>
+<span class="sd">    model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="n">irb_assistant_prompts</span><span class="o">.</span><span class="n">PUBMED_PROMPT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">input_research_q</span><span class="p">)</span>
+    <span class="n">chat</span> <span class="o">=</span> <span class="n">irb_assistant_config</span><span class="o">.</span><span class="n">PUBMED_CHAT</span>
+    <span class="k">if</span> <span class="n">loop_n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt</span> <span class="o">+</span> <span class="n">irb_assistant_prompts</span><span class="o">.</span><span class="n">FEW_RESULTS_PROMPT</span> <span class="o">+</span> <span class="n">last_query</span>
+    <span class="k">with</span> <span class="n">get_openai_callback</span><span class="p">()</span> <span class="k">as</span> <span class="n">response_meta</span><span class="p">:</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">SystemMessage</span><span class="p">(</span>
+                <span class="n">content</span><span class="o">=</span><span class="s2">&quot;You are an expert at conducting medical literature searches. You help beginning researchers.&quot;</span>
+            <span class="p">),</span>
+            <span class="n">HumanMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">prompt</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">response_meta</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="IRB_Assistant.generate.generate_simplified_text" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_simplified_text</span><span class="p">(</span><span class="n">complex_text</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="s1">&#39;&gt;, model_name=&#39;</span><span class="n">gpt</span><span class="o">-</span><span class="mf">3.5</span><span class="o">-</span><span class="n">turbo</span><span class="s1">&#39;, temperature=0.7, model_kwargs=</span><span class="si">{}</span><span class="s1">, openai_api_key=&#39;</span><span class="n">sk</span><span class="o">-</span><span class="n">aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr</span><span class="s1">&#39;, openai_api_base=&#39;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mockgpt</span><span class="o">.</span><span class="n">wiremockapi</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">v1</span><span class="s1">&#39;, openai_organization=&#39;&#39;, openai_proxy=&#39;&#39;, request_timeout=None, max_retries=6, streaming=False, n=1, max_tokens=None, tiktoken_model_name=None), chat_prompt=ChatPromptTemplate(input_variables=[&#39;</span><span class="n">text</span><span class="s1">&#39;], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, template=&quot;You are an AI language model with expertise in medical and clinical research terminology. Your role is to simplify complex clinical research texts, doctor&#39;</span><span class="n">s</span> <span class="n">notes</span><span class="p">,</span> <span class="ow">and</span> <span class="n">human</span> <span class="n">subject</span> <span class="n">research</span> <span class="n">regulatory</span> <span class="n">documents</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">IRB</span> <span class="n">applications</span> <span class="ow">and</span> <span class="n">consent</span> <span class="n">forms</span><span class="p">,</span> <span class="n">to</span> <span class="n">an</span> <span class="mi">8</span><span class="n">th</span><span class="o">-</span><span class="n">grade</span> <span class="n">reading</span> <span class="n">level</span><span class="o">.</span> <span class="n">Your</span> <span class="n">goal</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">make</span> <span class="n">the</span> <span class="n">information</span> <span class="n">accessible</span> <span class="ow">and</span> <span class="n">understandable</span> <span class="n">to</span> <span class="n">a</span> <span class="n">broader</span> <span class="n">audience</span><span class="p">,</span> <span class="n">using</span> <span class="n">simpler</span> <span class="n">words</span><span class="p">,</span> <span class="n">shorter</span> <span class="n">sentences</span><span class="p">,</span> <span class="ow">and</span> <span class="n">explaining</span> <span class="nb">complex</span> <span class="n">concepts</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">digestible</span> <span class="n">way</span><span class="o">.</span><span class="s2">&quot;, template_format=&#39;f-string&#39;, validate_template=True), additional_kwargs=</span><span class="si">{}</span><span class="s2">), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=[&#39;text&#39;], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s2">, template=&#39;Simplify the following clinical, research, or regulatory text to an 8th-grade reading level: </span><span class="si">{text}</span><span class="s2">&#39;, template_format=&#39;f-string&#39;, validate_template=True), additional_kwargs=</span><span class="si">{}</span><span class="s2">)]))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>generate_simplified_text</code> takes a complex text as input and uses a chat model to
+generate a simplified version of the text.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>complex_text</strong> (<code>str</code>) – The <code>complex_text</code> parameter is a string that represents the text that you</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>want to simplify. It is the input text that you want to pass to the <code>generate_simplified_text</code>
+function.
+  chat: The <code>chat</code> parameter is a function that takes a prompt as input and returns a response. It
+is used to interact with the chat model.
+  chat_prompt: The <code>chat_prompt</code> parameter is a string that represents the prompt to be used when
+generating a response from the chat model. It typically includes placeholders for the input text,
+which will be replaced with the actual input text when generating the prompt.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>The function <code>generate_simplified_text</code> returns the response generated by the chat model when</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>      <p>given the complex text as input.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>IRB_Assistant/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_simplified_text</span><span class="p">(</span>
+    <span class="n">complex_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">chat</span><span class="o">=</span><span class="n">irb_assistant_config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span>
+    <span class="n">chat_prompt</span><span class="o">=</span><span class="n">irb_assistant_prompts</span><span class="o">.</span><span class="n">simplify_chat_prompt</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `generate_simplified_text` takes a complex text as input and uses a chat model to</span>
+<span class="sd">    generate a simplified version of the text.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      complex_text (str): The `complex_text` parameter is a string that represents the text that you</span>
+<span class="sd">    want to simplify. It is the input text that you want to pass to the `generate_simplified_text`</span>
+<span class="sd">    function.</span>
+<span class="sd">      chat: The `chat` parameter is a function that takes a prompt as input and returns a response. It</span>
+<span class="sd">    is used to interact with the chat model.</span>
+<span class="sd">      chat_prompt: The `chat_prompt` parameter is a string that represents the prompt to be used when</span>
+<span class="sd">    generating a response from the chat model. It typically includes placeholders for the input text,</span>
+<span class="sd">    which will be replaced with the actual input text when generating the prompt.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The function `generate_simplified_text` returns the response generated by the chat model when</span>
+<span class="sd">    given the complex text as input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">get_openai_callback</span><span class="p">()</span> <span class="k">as</span> <span class="n">response_meta</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">chat_prompt</span><span class="o">.</span><span class="n">format_prompt</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">complex_text</span><span class="p">)</span><span class="o">.</span><span class="n">to_messages</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">response</span><span class="p">,</span> <span class="n">response_meta</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="IRB_Assistant.generate.get_irb_assistant_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_irb_assistant_response</span><span class="p">(</span><span class="n">hypothesis</span><span class="p">,</span> <span class="n">inclusion</span><span class="p">,</span> <span class="n">time_window</span><span class="p">,</span> <span class="n">exclusion</span><span class="p">,</span> <span class="n">design</span><span class="p">,</span> <span class="n">details</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="s1">&#39;&gt;, model_name=&#39;</span><span class="n">gpt</span><span class="o">-</span><span class="mf">3.5</span><span class="o">-</span><span class="n">turbo</span><span class="s1">&#39;, temperature=0.7, model_kwargs=</span><span class="si">{}</span><span class="s1">, openai_api_key=&#39;</span><span class="n">sk</span><span class="o">-</span><span class="n">aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr</span><span class="s1">&#39;, openai_api_base=&#39;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mockgpt</span><span class="o">.</span><span class="n">wiremockapi</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">v1</span><span class="s1">&#39;, openai_organization=&#39;&#39;, openai_proxy=&#39;&#39;, request_timeout=None, max_retries=6, streaming=False, n=1, max_tokens=None, tiktoken_model_name=None), chat_prompt=ChatPromptTemplate(input_variables=[&#39;</span><span class="n">design</span><span class="s1">&#39;, &#39;</span><span class="n">details</span><span class="s1">&#39;, &#39;</span><span class="n">exclusion</span><span class="s1">&#39;, &#39;</span><span class="n">inclusion</span><span class="s1">&#39;, &#39;</span><span class="n">question</span><span class="s1">&#39;, &#39;</span><span class="n">time_window</span><span class="s1">&#39;], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, template=&quot;</span><span class="se">\n</span><span class="s1">You are a clinical-research assistant specializing in preparation of regulatory documents, particularly Institutional Review Board (IRB). </span><span class="se">\n\n</span><span class="s1">Using the details of a proposed study the user provides, suggest the contents for each of the following IRB application sections. </span><span class="se">\n</span><span class="s1">Be sure to address every section and bullet point.</span><span class="se">\n\n</span><span class="s1">**Study Title:**: &lt;suggest a title&gt;</span><span class="se">\n</span><span class="s1"># Summary of study</span><span class="se">\n</span><span class="s1">&lt;Abstract with maximum of 300 words, 8th-grade reading level&gt;</span><span class="se">\n\n</span><span class="s1"># Background and rationale</span><span class="se">\n</span><span class="s1">&lt;Clinical relevance/significance, 8th-grade reading level&gt;</span><span class="se">\n\n</span><span class="s1"># Objectives and Hypothesis </span><span class="se">\n</span><span class="s1">- Purpose of study &lt;8th-grade reading level&gt;: The purpose of this study is ….</span><span class="se">\n</span><span class="s1">- Study Hypothesis: We hypothesize that…</span><span class="se">\n\n</span><span class="s1"># Inclusion and Exclusion criteria:</span><span class="se">\n</span><span class="s1">- Inclusion criteria:</span><span class="se">\n</span><span class="s1">- Exclusion criteria:</span><span class="se">\n\n</span><span class="s1"># Randomization/Recruitment Details (if applicable)</span><span class="se">\n</span><span class="s1">- Randomization groups: How will subjects be randomized?</span><span class="se">\n</span><span class="s1">- Blinded? (yes/no)</span><span class="se">\n</span><span class="s1">- If yes, single or double?</span><span class="se">\n\n</span><span class="s1"># Study Interventions/Procedures</span><span class="se">\n</span><span class="s1">- Study design &lt;8th-grade reading level&gt;:</span><span class="se">\n</span><span class="s1">    - Sampling methods: &lt;recommended sampling methods&gt;</span><span class="se">\n</span><span class="s1">    - Sample size calculation: guidance on sample size calculation, if retrospective, suggest reaching out to informatics team to get</span><span class="se">\n</span><span class="s1">    - Selection of variables: &lt;suggested variables to include&gt;</span><span class="se">\n</span><span class="s1">        For eventual demographic reporting in publications, always include at minimum Age, Sex, Race, Ethnicity, Height, Weight, Blood pressure, Insurance status.</span><span class="se">\n</span><span class="s1">        Additionally, any of the following relevant to the study: comordibities, medications, laboratory tests, nonmedication inventions, or baseline cohort identification variables.</span><span class="se">\n</span><span class="s1">        Be exhaustive. Include a reasonably maximal set of variables the researcher may want to include.</span><span class="se">\n</span><span class="s1">- Comparison groups (for prospective and clinical trials only):</span><span class="se">\n</span><span class="s1">- Timeline of interventions (for prospective and clinical trials only, suggested elements below):</span><span class="se">\n</span><span class="s1">    - Screening/Eligibility Assessment (week 0): &lt;details&gt;</span><span class="se">\n</span><span class="s1">    - Consenting Process (week #): &lt;Clearly state when and how informed consent will be obtained from the participant&gt;</span><span class="se">\n</span><span class="s1">    - Baseline Visit(week #): &lt;details of baseline measurements taken before any intervention or treatment begins&gt;</span><span class="se">\n</span><span class="s1">    - Randomization (week #): &lt;details&gt;</span><span class="se">\n</span><span class="s1">    - Intervention Initiation (week #): &lt;details&gt;</span><span class="se">\n</span><span class="s1">    - Follow-Up Assessments (week #): &lt;specify how often these occur and what will happen at them&gt;</span><span class="se">\n</span><span class="s1">    - Intervention Completion (week #): &lt;details&gt;</span><span class="se">\n</span><span class="s1">    - Post-Intervention Assessments(week #): &lt;specify how often these occur and what will happen at them&gt;</span><span class="se">\n</span><span class="s1">    - Study Exit/Debriefing (week #): &lt;include what will happen&gt;</span><span class="se">\n\n</span><span class="s1"># Measured Outcomes:</span><span class="se">\n</span><span class="s1">- Primary outcomes:</span><span class="se">\n</span><span class="s1">Use these categories as appropriate for describing primary outcomes:</span><span class="se">\n</span><span class="s1">    - Patient-reported outcomes (PROs): These are reports coming directly from patients about how they feel or function in relation to a health condition and its therapy, without interpretation by healthcare professionals or anyone else.</span><span class="se">\n</span><span class="s1">    - Clinical outcomes: These are outcomes that relate to the health status of the patients. They could be the rate of disease progression, survival rate, rate of hospitalization, etc.</span><span class="se">\n</span><span class="s1">    - Health-related quality of life (HRQoL) outcomes: These measure the effect of an illness and its treatment on a patient&#39;</span><span class="n">s</span> <span class="n">perceived</span> <span class="n">physical</span> <span class="ow">and</span> <span class="n">mental</span> <span class="n">health</span> <span class="n">over</span> <span class="n">time</span><span class="o">.</span>\<span class="n">n</span>    <span class="o">-</span> <span class="n">Economic</span> <span class="n">outcomes</span><span class="p">:</span> <span class="n">These</span> <span class="n">measure</span> <span class="n">the</span> <span class="n">cost</span><span class="o">-</span><span class="n">effectiveness</span> <span class="n">of</span> <span class="n">a</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">cost</span> <span class="n">per</span> <span class="n">quality</span><span class="o">-</span><span class="n">adjusted</span> <span class="n">life</span> <span class="n">year</span> <span class="p">(</span><span class="n">QALY</span><span class="p">)</span> <span class="n">saved</span><span class="o">.</span>\<span class="n">n</span>    <span class="o">-</span> <span class="n">Composite</span> <span class="n">outcomes</span><span class="p">:</span> <span class="n">These</span> <span class="n">are</span> <span class="n">outcomes</span> <span class="n">that</span> <span class="n">combine</span> <span class="n">multiple</span> <span class="n">individual</span> <span class="n">outcomes</span> <span class="n">into</span> <span class="n">one</span> <span class="n">measure</span><span class="o">.</span>\<span class="n">n</span>    <span class="o">-</span> <span class="n">Hard</span> <span class="ow">and</span> <span class="n">soft</span> <span class="n">outcomes</span><span class="p">:</span> <span class="n">Hard</span> <span class="n">outcomes</span> <span class="n">are</span> <span class="n">objective</span><span class="p">,</span> <span class="n">definitive</span><span class="p">,</span> <span class="ow">and</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">measure</span> <span class="p">(</span><span class="n">like</span> <span class="n">death</span><span class="p">,</span> <span class="n">heart</span> <span class="n">attack</span><span class="p">,</span> <span class="ow">or</span> <span class="n">stroke</span><span class="p">)</span><span class="o">.</span> <span class="n">Soft</span> <span class="n">outcomes</span><span class="p">,</span> <span class="n">on</span> <span class="n">the</span> <span class="n">other</span> <span class="n">hand</span><span class="p">,</span> <span class="n">can</span> <span class="n">be</span> <span class="n">more</span> <span class="n">subjective</span> <span class="ow">and</span> <span class="n">possibly</span> <span class="nb">open</span> <span class="n">to</span> <span class="n">interpretation</span> <span class="p">(</span><span class="n">like</span> <span class="n">perceived</span> <span class="n">pain</span> <span class="n">level</span> <span class="ow">or</span> <span class="n">patient</span> <span class="n">satisfaction</span><span class="p">)</span><span class="o">.</span>\<span class="n">n</span><span class="o">-</span> <span class="n">Secondary</span> <span class="n">outcomes</span><span class="p">:</span>\<span class="n">nUse</span> <span class="n">these</span> <span class="n">categories</span> <span class="k">as</span> <span class="n">appropriate</span> <span class="k">for</span> <span class="n">describing</span> <span class="n">secondary</span> <span class="n">outcomes</span><span class="p">:</span>\<span class="n">n</span>    <span class="o">-</span> <span class="n">Patient</span><span class="o">-</span><span class="n">reported</span> <span class="n">outcomes</span> <span class="p">(</span><span class="n">PROs</span><span class="p">):</span> <span class="n">These</span> <span class="n">are</span> <span class="n">reports</span> <span class="n">coming</span> <span class="n">directly</span> <span class="kn">from</span> <span class="nn">patients</span> <span class="n">about</span> <span class="n">how</span> <span class="n">they</span> <span class="n">feel</span> <span class="ow">or</span> <span class="n">function</span> <span class="ow">in</span> <span class="n">relation</span> <span class="n">to</span> <span class="n">a</span> <span class="n">health</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">therapy</span><span class="p">,</span> <span class="n">without</span> <span class="n">interpretation</span> <span class="n">by</span> <span class="n">healthcare</span> <span class="n">professionals</span> <span class="ow">or</span> <span class="n">anyone</span> <span class="k">else</span><span class="o">.</span>\<span class="n">n</span>    <span class="o">-</span> <span class="n">Clinical</span> <span class="n">outcomes</span><span class="p">:</span> <span class="n">These</span> <span class="n">are</span> <span class="n">outcomes</span> <span class="n">that</span> <span class="n">relate</span> <span class="n">to</span> <span class="n">the</span> <span class="n">health</span> <span class="n">status</span> <span class="n">of</span> <span class="n">the</span> <span class="n">patients</span><span class="o">.</span> <span class="n">They</span> <span class="n">could</span> <span class="n">be</span> <span class="n">the</span> <span class="n">rate</span> <span class="n">of</span> <span class="n">disease</span> <span class="n">progression</span><span class="p">,</span> <span class="n">survival</span> <span class="n">rate</span><span class="p">,</span> <span class="n">rate</span> <span class="n">of</span> <span class="n">hospitalization</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>\<span class="n">n</span>    <span class="o">-</span> <span class="n">Health</span><span class="o">-</span><span class="n">related</span> <span class="n">quality</span> <span class="n">of</span> <span class="n">life</span> <span class="p">(</span><span class="n">HRQoL</span><span class="p">)</span> <span class="n">outcomes</span><span class="p">:</span> <span class="n">These</span> <span class="n">measure</span> <span class="n">the</span> <span class="n">effect</span> <span class="n">of</span> <span class="n">an</span> <span class="n">illness</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">treatment</span> <span class="n">on</span> <span class="n">a</span> <span class="n">patient</span><span class="s1">&#39;s perceived physical and mental health over time.</span><span class="se">\n</span><span class="s1">    - Economic outcomes: These measure the cost-effectiveness of a treatment, such as cost per quality-adjusted life year (QALY) saved.</span><span class="se">\n</span><span class="s1">    - Composite outcomes: These are outcomes that combine multiple individual outcomes into one measure.</span><span class="se">\n</span><span class="s1">    - Hard and soft outcomes: Hard outcomes are objective, definitive, and easy to measure (like death, heart attack, or stroke). Soft outcomes, on the other hand, can be more subjective and possibly open to interpretation (like perceived pain level or patient satisfaction).</span><span class="se">\n</span><span class="s1">- Endpoints:</span><span class="se">\n</span><span class="s1">Use these categories as appropriate to describe endpoints beyong the primary and secondary outcomes</span><span class="se">\n</span><span class="s1">    - Exploratory endpoints: These are endpoints that are not as well-defined as the primary and secondary endpoints, but they could provide more exploratory or preliminary information.</span><span class="se">\n</span><span class="s1">    - Safety endpoints: These endpoints are used to determine the adverse effects of the treatment, if any.</span><span class="se">\n</span><span class="s1">    - Surrogate endpoints: These are markers, such as lab tests or imaging results, that may not in themselves be a direct measure of patient benefit, but may suggest that the intervention is having a beneficial effect. For example, lowering cholesterol is a surrogate endpoint: it suggests benefit but does not in itself prove a reduction in heart attacks or strokes.</span><span class="se">\n</span><span class="s1">    - Clinical endpoints: These are outcomes that matter to patients and may include a range of things from death, progression of disease, hospitalization, pain, or quality of life.</span><span class="se">\n\n</span><span class="s1"># Projected Overall Study Timeline</span><span class="se">\n</span><span class="s1">Suggest a number of months for each of these steps, presented as a table.</span><span class="se">\n</span><span class="s1">If other study-specific steps are appropriate, add them.</span><span class="se">\n\n</span><span class="s1">| Event                   | Timeline         |</span><span class="se">\n</span><span class="s1">|-------------------------|------------------|</span><span class="se">\n</span><span class="s1">| Study Start-Up          | # months         |</span><span class="se">\n</span><span class="s1">| Enrollment              | # months         |</span><span class="se">\n</span><span class="s1">| Data Entry and Analysis | # months         |</span><span class="se">\n</span><span class="s1">| Study Write-Up          | # months         |</span><span class="se">\n\n\n</span><span class="s1"># Plan for study &lt;8th-grade reading level&gt;</span><span class="se">\n</span><span class="s1">- List (in steps) how the study will be conducted (from consenting/screening to data/sample collection) – include who will obtain consent and how many times/duration any procedure/intervention will be performed:</span><span class="se">\n</span><span class="s1">As appropriate, use these categories of steps:</span><span class="se">\n</span><span class="s1">    - Screening and Enrollment: Describe the process for screening potential participants for eligibility and enrolling them in the study. This could also include the acquisition of existing data or samples for retrospective studies or secondary data analysis.</span><span class="se">\n</span><span class="s1">    - Informed Consent Process: Detail the process for obtaining informed consent from participants. This may not apply to some types of retrospective studies or secondary data analysis, where data is anonymized.</span><span class="se">\n</span><span class="s1">    - Baseline Assessments: Describe the collection of baseline data, if applicable.</span><span class="se">\n</span><span class="s1">    - Implementation of Intervention/Procedure/Exposure: If applicable, describe the intervention, procedure, or exposure that forms the basis of your research. Specify who will administer it, how often, and over what duration.</span><span class="se">\n</span><span class="s1">    - Follow-Up and Data Collection: Describe when and how you will collect data during the study. This could be clinical data, survey responses, or routinely collected data, among others. Include details about frequency of data collection, data collection tools, and who will be responsible for this process.</span><span class="se">\n</span><span class="s1">    - Data Analysis: Describe how and when the data will be analyzed.</span><span class="se">\n</span><span class="s1">    - Closure of the Study: Detail what will happen at the end of the study, such as final data collection, debriefing of participants, analysis of final data, and dissemination of results.</span><span class="se">\n</span><span class="s1">    - Ethical Considerations and Risk Management: Describe any potential risks to participants and how these will be managed. Detail how you will ensure privacy and confidentiality.</span><span class="se">\n</span><span class="s1">- Potential impact: What is the potential impact of your study findings (e.g., how will findings impact clinical outcomes)?</span><span class="se">\n\n</span><span class="s1"># Statistical Considerations:</span><span class="se">\n</span><span class="s1">- Potential sources of bias: &lt;identified sources of bias and how to address them&gt;</span><span class="se">\n</span><span class="s1">- Potential confounding factors: &lt;identified confounding factors and how to address them&gt;</span><span class="se">\n</span><span class="s1">- Data collection: &lt;suggested data collection techniques, including consideration for bias&gt;</span><span class="se">\n</span><span class="s1">- Data analysis: &lt;recommended data analysis techniques, including consideration for confounding&gt;</span><span class="se">\n\n</span><span class="s1"># Study Resources</span><span class="se">\n</span><span class="s1">Suggest responses to each of these for the researcher:</span><span class="se">\n</span><span class="s1">- Will a clinical research assistant be needed to coordinate/assist with your protocol?</span><span class="se">\n</span><span class="s1">    Our clinical research assistants can help only with IRB, consent, sample collection, and transport to laboratories.</span><span class="se">\n</span><span class="s1">- If yes, explain what the research coordinator will do.</span><span class="se">\n</span><span class="s1">- Will you need help with data extraction from the IT team (yes/no)?</span><span class="se">\n</span><span class="s1">- Are there any other resources you will need? Explain.</span><span class="se">\n\n</span><span class="s1">Note that written consent is only required if there is a clinical intervention taking place or the user explicitly says that Protected Health Information (PHI) will be part of the data being analyzed.</span><span class="se">\n\n</span><span class="s1">Format your response as markdown with appropriate section headers.</span><span class="se">\n</span><span class="s1">&quot;, template_format=&#39;</span><span class="n">f</span><span class="o">-</span><span class="n">string</span><span class="s1">&#39;, validate_template=True), additional_kwargs=</span><span class="si">{}</span><span class="s1">), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=[&#39;</span><span class="n">design</span><span class="s1">&#39;, &#39;</span><span class="n">details</span><span class="s1">&#39;, &#39;</span><span class="n">exclusion</span><span class="s1">&#39;, &#39;</span><span class="n">inclusion</span><span class="s1">&#39;, &#39;</span><span class="n">question</span><span class="s1">&#39;, &#39;</span><span class="n">time_window</span><span class="s1">&#39;], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, template=&#39;</span>\<span class="n">nHere</span> <span class="n">are</span> <span class="n">the</span> <span class="n">details</span> <span class="n">of</span> <span class="n">my</span> <span class="n">study</span>\<span class="n">n</span><span class="o">-</span> <span class="n">Research</span> <span class="n">question</span><span class="p">:</span>\<span class="n">n</span><span class="p">{</span><span class="n">question</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">-</span> <span class="n">Inclusion</span> <span class="n">criteria</span><span class="p">:</span>\<span class="n">n</span><span class="p">{</span><span class="n">inclusion</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">-</span> <span class="n">Date</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">study</span><span class="p">:</span>\<span class="n">n</span><span class="p">{</span><span class="n">time_window</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">-</span> <span class="n">Exclusion</span> <span class="n">criteria</span><span class="p">:</span>\<span class="n">n</span><span class="p">{</span><span class="n">exclusion</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">-</span> <span class="n">Design</span><span class="p">:</span>\<span class="n">n</span><span class="p">{</span><span class="n">design</span><span class="p">}</span>\<span class="n">n</span>\<span class="n">nAdditional</span> <span class="n">details</span><span class="p">:</span>\<span class="n">n</span><span class="p">{</span><span class="n">details</span><span class="p">}</span>\<span class="n">n</span><span class="s1">&#39;, template_format=&#39;</span><span class="n">f</span><span class="o">-</span><span class="n">string</span><span class="s1">&#39;, validate_template=True), additional_kwargs=</span><span class="si">{}</span><span class="s1">)]))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>get_irb_assistant_response</code> takes in various parameters related to an IRB
+(Institutional Review Board) application and uses a chatbot to generate a response.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>hypothesis</strong> (<code>str</code>) – The hypothesis is a statement or prediction that you want to test or investigate</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>in your research study. It is usually formulated as an if-then statement, where the "if" part
+represents the independent variable or condition, and the "then" part represents the expected
+outcome or dependent variable.
+  inclusion (str): The "inclusion" parameter refers to the criteria that participants must meet in
+order to be included in the study. It specifies the characteristics or conditions that individuals
+must have in order to be eligible to participate.
+  time_window (str): The <code>time_window</code> parameter is used to specify the time period or duration for
+which the research study will be conducted. It can be a specific time frame (e.g., "6 months", "1
+year") or a more general description (e.g., "short-term", "long-term").
+  exclusion (str): The "exclusion" parameter refers to any criteria or factors that would exclude
+certain participants or data from your study. This could include things like age restrictions,
+medical conditions, or other specific characteristics that would make someone ineligible to
+participate or have their data included in the study.
+  design (str): The "design" parameter refers to the design of a research study. It typically
+includes information about the methodology, data collection procedures, and analysis techniques that
+will be used in the study.
+  details (str): The "details" parameter is a string that contains additional information or
+specifications related to the research study. It can include things like the specific variables
+being measured, the sample size, the research methodology, or any other relevant details that help
+provide context for the study.
+  chat: The <code>chat</code> parameter is a function that takes a chat prompt as input and returns a response
+from the IRB assistant. It is used to communicate with the assistant during the conversation.
+  chat_prompt: The <code>chat_prompt</code> parameter is a string that contains a placeholder for the question,
+inclusion criteria, time window, exclusion criteria, design, and details. These placeholders are
+represented by the variables <code>{question}</code>, <code>{inclusion}</code>, <code>{time_window}</code>, <code>{exclusion}</code>,
+<code>{design}</code>, and <code>{details}</code></p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>the response from the chatbot assistant.</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>IRB_Assistant/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_irb_assistant_response</span><span class="p">(</span>
+    <span class="n">hypothesis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">inclusion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">time_window</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">exclusion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">design</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">details</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">chat</span><span class="o">=</span><span class="n">irb_assistant_config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span>
+    <span class="n">chat_prompt</span><span class="o">=</span><span class="n">irb_assistant_prompts</span><span class="o">.</span><span class="n">irb_chat_prompt</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `get_irb_assistant_response` takes in various parameters related to an IRB</span>
+<span class="sd">    (Institutional Review Board) application and uses a chatbot to generate a response.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      hypothesis (str): The hypothesis is a statement or prediction that you want to test or investigate</span>
+<span class="sd">    in your research study. It is usually formulated as an if-then statement, where the &quot;if&quot; part</span>
+<span class="sd">    represents the independent variable or condition, and the &quot;then&quot; part represents the expected</span>
+<span class="sd">    outcome or dependent variable.</span>
+<span class="sd">      inclusion (str): The &quot;inclusion&quot; parameter refers to the criteria that participants must meet in</span>
+<span class="sd">    order to be included in the study. It specifies the characteristics or conditions that individuals</span>
+<span class="sd">    must have in order to be eligible to participate.</span>
+<span class="sd">      time_window (str): The `time_window` parameter is used to specify the time period or duration for</span>
+<span class="sd">    which the research study will be conducted. It can be a specific time frame (e.g., &quot;6 months&quot;, &quot;1</span>
+<span class="sd">    year&quot;) or a more general description (e.g., &quot;short-term&quot;, &quot;long-term&quot;).</span>
+<span class="sd">      exclusion (str): The &quot;exclusion&quot; parameter refers to any criteria or factors that would exclude</span>
+<span class="sd">    certain participants or data from your study. This could include things like age restrictions,</span>
+<span class="sd">    medical conditions, or other specific characteristics that would make someone ineligible to</span>
+<span class="sd">    participate or have their data included in the study.</span>
+<span class="sd">      design (str): The &quot;design&quot; parameter refers to the design of a research study. It typically</span>
+<span class="sd">    includes information about the methodology, data collection procedures, and analysis techniques that</span>
+<span class="sd">    will be used in the study.</span>
+<span class="sd">      details (str): The &quot;details&quot; parameter is a string that contains additional information or</span>
+<span class="sd">    specifications related to the research study. It can include things like the specific variables</span>
+<span class="sd">    being measured, the sample size, the research methodology, or any other relevant details that help</span>
+<span class="sd">    provide context for the study.</span>
+<span class="sd">      chat: The `chat` parameter is a function that takes a chat prompt as input and returns a response</span>
+<span class="sd">    from the IRB assistant. It is used to communicate with the assistant during the conversation.</span>
+<span class="sd">      chat_prompt: The `chat_prompt` parameter is a string that contains a placeholder for the question,</span>
+<span class="sd">    inclusion criteria, time window, exclusion criteria, design, and details. These placeholders are</span>
+<span class="sd">    represented by the variables `{question}`, `{inclusion}`, `{time_window}`, `{exclusion}`,</span>
+<span class="sd">    `{design}`, and `{details}`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      the response from the chatbot assistant.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span>
+        <span class="n">chat_prompt</span><span class="o">.</span><span class="n">format_prompt</span><span class="p">(</span>
+            <span class="n">question</span><span class="o">=</span><span class="n">hypothesis</span><span class="p">,</span>
+            <span class="n">inclusion</span><span class="o">=</span><span class="n">inclusion</span><span class="p">,</span>
+            <span class="n">time_window</span><span class="o">=</span><span class="n">time_window</span><span class="p">,</span>
+            <span class="n">exclusion</span><span class="o">=</span><span class="n">exclusion</span><span class="p">,</span>
+            <span class="n">design</span><span class="o">=</span><span class="n">design</span><span class="p">,</span>
+            <span class="n">details</span><span class="o">=</span><span class="n">details</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">to_messages</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="IRB_Assistant.generate.get_variable_assistant_response" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_variable_assistant_response</span><span class="p">(</span><span class="n">generated_protocol</span><span class="p">,</span> <span class="n">chat</span><span class="o">=</span><span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">callbacks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">callback_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">client</span><span class="o">=&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">openai</span><span class="o">.</span><span class="n">api_resources</span><span class="o">.</span><span class="n">chat_completion</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="s1">&#39;&gt;, model_name=&#39;</span><span class="n">gpt</span><span class="o">-</span><span class="mf">3.5</span><span class="o">-</span><span class="n">turbo</span><span class="s1">&#39;, temperature=0.7, model_kwargs=</span><span class="si">{}</span><span class="s1">, openai_api_key=&#39;</span><span class="n">sk</span><span class="o">-</span><span class="n">aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr</span><span class="s1">&#39;, openai_api_base=&#39;</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mockgpt</span><span class="o">.</span><span class="n">wiremockapi</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">v1</span><span class="s1">&#39;, openai_organization=&#39;&#39;, openai_proxy=&#39;&#39;, request_timeout=None, max_retries=6, streaming=False, n=1, max_tokens=None, tiktoken_model_name=None), chat_prompt=ChatPromptTemplate(input_variables=[&#39;</span><span class="n">protocol</span><span class="s1">&#39;], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, messages=[SystemMessagePromptTemplate(prompt=PromptTemplate(input_variables=[], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s1">, template=&quot;You are a clinical-research assistant specializing in preparation of regulatory documents, particularly Institutional Review Board (IRB).</span><span class="se">\n\n</span><span class="s1">Your job is to address a specific, recurring problem of researchers not providing an exhaustive list of variables to be collected or extracted for their proposed study.</span><span class="se">\n\n</span><span class="s1">The ultimate goal of every project is publication in a medical journal. Be sure to consider what variables a journal and its peer reviewers might expect.</span><span class="se">\n\n</span><span class="s1">You will be given a researcher&#39;</span><span class="n">s</span> <span class="n">proposed</span> <span class="n">study</span> <span class="n">protocol</span><span class="o">.</span> <span class="n">Respond</span> <span class="k">with</span> <span class="n">an</span> <span class="n">exhaustive</span> <span class="n">markdown</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">variables</span> <span class="n">to</span> <span class="n">be</span> <span class="n">collected</span> <span class="ow">or</span> <span class="n">extracted</span><span class="o">.</span> <span class="n">Include</span> <span class="nb">any</span> <span class="n">likely</span> <span class="n">variables</span> <span class="n">the</span> <span class="n">researcher</span> <span class="n">may</span> <span class="n">have</span> <span class="n">forgotten</span><span class="o">.</span>\<span class="n">n</span>\<span class="n">nRespond</span> <span class="n">like</span> <span class="n">this</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">**</span><span class="n">Variable</span> <span class="n">considerations</span><span class="p">:</span><span class="o">**</span>\<span class="n">n</span><span class="o">&lt;</span><span class="n">factors</span> <span class="ow">and</span> <span class="n">considerations</span> <span class="n">important</span> <span class="k">for</span> <span class="n">determining</span> <span class="n">what</span> <span class="n">variables</span> <span class="n">to</span> <span class="n">include</span><span class="o">&gt;</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">**</span><span class="n">Exhaustive</span> <span class="n">Variable</span> <span class="nb">list</span><span class="p">:</span><span class="o">**</span>\<span class="n">n</span><span class="o">&lt;</span><span class="n">markdown</span> <span class="n">bullet</span> <span class="nb">list</span><span class="o">&gt;</span>\<span class="n">n</span><span class="s2">&quot;, template_format=&#39;f-string&#39;, validate_template=True), additional_kwargs=</span><span class="si">{}</span><span class="s2">), HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=[&#39;protocol&#39;], output_parser=None, partial_variables=</span><span class="si">{}</span><span class="s2">, template=&#39;</span><span class="se">\n</span><span class="s2">Here is the proposed protocol:</span><span class="se">\n\n</span><span class="si">{protocol}</span><span class="se">\n</span><span class="s2">&#39;, template_format=&#39;f-string&#39;, validate_template=True), additional_kwargs=</span><span class="si">{}</span><span class="s2">)]))</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>get_variable_assistant_response</code> takes a generated protocol as input and uses a chat
+assistant to generate a response.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>generated_protocol</strong> (<code>str</code>) – A string representing the generated protocol that you want to pass to</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>the chat assistant.
+  chat: The <code>chat</code> parameter is a function that takes a list of messages as input and returns a list
+of responses. It represents the chatbot or assistant that you are using to generate responses.
+  chat_prompt: The <code>chat_prompt</code> parameter is a string that contains a placeholder <code>{protocol}</code>.
+This placeholder is used to insert the generated protocol into the prompt. The <code>format_prompt</code>
+method is called on the <code>chat_prompt</code> to replace the placeholder with the generated protocol.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>The function <code>get_variable_assistant_response</code> returns the response generated by the chat</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>      <p>assistant when given a generated protocol as input.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>IRB_Assistant/generate.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_variable_assistant_response</span><span class="p">(</span>
+    <span class="n">generated_protocol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">chat</span><span class="o">=</span><span class="n">irb_assistant_config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span>
+    <span class="n">chat_prompt</span><span class="o">=</span><span class="n">irb_assistant_prompts</span><span class="o">.</span><span class="n">variable_chat_prompt</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `get_variable_assistant_response` takes a generated protocol as input and uses a chat</span>
+<span class="sd">    assistant to generate a response.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      generated_protocol (str): A string representing the generated protocol that you want to pass to</span>
+<span class="sd">    the chat assistant.</span>
+<span class="sd">      chat: The `chat` parameter is a function that takes a list of messages as input and returns a list</span>
+<span class="sd">    of responses. It represents the chatbot or assistant that you are using to generate responses.</span>
+<span class="sd">      chat_prompt: The `chat_prompt` parameter is a string that contains a placeholder `{protocol}`.</span>
+<span class="sd">    This placeholder is used to insert the generated protocol into the prompt. The `format_prompt`</span>
+<span class="sd">    method is called on the `chat_prompt` to replace the placeholder with the generated protocol.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The function `get_variable_assistant_response` returns the response generated by the chat</span>
+<span class="sd">    assistant when given a generated protocol as input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">chat_prompt</span><span class="o">.</span><span class="n">format_prompt</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="n">generated_protocol</span><span class="p">)</span><span class="o">.</span><span class="n">to_messages</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../data/" class="btn btn-neutral float-left" title="data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../data/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
