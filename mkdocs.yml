@@ -1,0 +1,16 @@
+# mkdocs.yml
+site_name: FILL OUT
+site_url: https://sites.uab.edu/periop-datascience/
+repo_url: https://gitlab.rc.uab.edu/anes_ai/llm_apps/irb_assistant
+nav:
+  - Home: index.md
+  - workflows:
+    - main: IRB_Assistant/main.md
+  - IRB_Assistant:
+    - data: IRB_Assistant/data.md
+    - generate: IRB_Assistant/generate.md
+theme: readthedocs
+plugins:
+  - mkdocstrings
+watch:
+  - .  # reload docs for any file changes
