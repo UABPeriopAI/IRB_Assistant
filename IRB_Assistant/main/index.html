@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://sites.uab.edu/periop-datascience/IRB_Assistant/main/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>main - FILL OUT</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "main";
+        var mkdocs_page_input_path = "IRB_Assistant/main.md";
+        var mkdocs_page_url = "/periop-datascience/IRB_Assistant/main/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> FILL OUT
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">workflows</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">main</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">IRB_Assistant</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/">data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../generate/">generate</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">FILL OUT</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>workflows &raquo;</li>
+      <li>main</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+<a id="IRB_Assistant.main"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="IRB_Assistant.main.generate_irb" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">generate_irb</span><span class="p">(</span><span class="n">hypothesis</span><span class="p">,</span> <span class="n">inclusion</span><span class="p">,</span> <span class="n">time_window</span><span class="p">,</span> <span class="n">exclusion</span><span class="p">,</span> <span class="n">design</span><span class="p">,</span> <span class="n">details</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>The function <code>generate_irb</code> takes in various parameters related to an IRB (Institutional Review
+Board) application and returns a response from an IRB assistant.</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li><p><strong>hypothesis</strong> (<code>str</code>) – A statement or prediction that you want to test or investigate.</p></li>
+            <li><p><strong>inclusion</strong> (<code>str</code>) – The "inclusion" parameter refers to the criteria that participants must meet in</p></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      <p>order to be included in the study. It specifies the characteristics or conditions that individuals
+must possess in order to be eligible for participation.
+  time_window (str): The <code>time_window</code> parameter is used to specify the duration or time frame for
+the research study. It can be a specific time period, such as "6 months" or "1 year", or it can be a
+more general description, such as "longitudinal study" or "cross-sectional
+  exclusion (str): The "exclusion" parameter is used to specify any criteria or factors that would
+exclude certain individuals or groups from participating in the study. This could include things
+like age restrictions, medical conditions, or other specific characteristics that would make someone
+ineligible for the study.
+  design (str): The "design" parameter refers to the design of the research study. It specifies the
+overall plan or strategy that will be used to answer the research question or test the hypothesis.
+Examples of different research designs include experimental, observational, correlational, and
+qualitative designs.
+  details (str): The "details" parameter is a string that contains additional information or
+specifications related to the IRB (Institutional Review Board) application. It can include any
+relevant details such as the study population, data collection methods, ethical considerations, or
+any other information that is important for the IRB review process</p>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+        <ul class="first simple">
+          <li><p>The function <code>generate_irb</code> returns the contents of the response generated by the IRB assistant.</p></li>
+        </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>IRB_Assistant/main.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">generate_irb</span><span class="p">(</span>
+    <span class="n">hypothesis</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">inclusion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">time_window</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">exclusion</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">design</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">details</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function `generate_irb` takes in various parameters related to an IRB (Institutional Review</span>
+<span class="sd">    Board) application and returns a response from an IRB assistant.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">      hypothesis (str): A statement or prediction that you want to test or investigate.</span>
+<span class="sd">      inclusion (str): The &quot;inclusion&quot; parameter refers to the criteria that participants must meet in</span>
+<span class="sd">    order to be included in the study. It specifies the characteristics or conditions that individuals</span>
+<span class="sd">    must possess in order to be eligible for participation.</span>
+<span class="sd">      time_window (str): The `time_window` parameter is used to specify the duration or time frame for</span>
+<span class="sd">    the research study. It can be a specific time period, such as &quot;6 months&quot; or &quot;1 year&quot;, or it can be a</span>
+<span class="sd">    more general description, such as &quot;longitudinal study&quot; or &quot;cross-sectional</span>
+<span class="sd">      exclusion (str): The &quot;exclusion&quot; parameter is used to specify any criteria or factors that would</span>
+<span class="sd">    exclude certain individuals or groups from participating in the study. This could include things</span>
+<span class="sd">    like age restrictions, medical conditions, or other specific characteristics that would make someone</span>
+<span class="sd">    ineligible for the study.</span>
+<span class="sd">      design (str): The &quot;design&quot; parameter refers to the design of the research study. It specifies the</span>
+<span class="sd">    overall plan or strategy that will be used to answer the research question or test the hypothesis.</span>
+<span class="sd">    Examples of different research designs include experimental, observational, correlational, and</span>
+<span class="sd">    qualitative designs.</span>
+<span class="sd">      details (str): The &quot;details&quot; parameter is a string that contains additional information or</span>
+<span class="sd">    specifications related to the IRB (Institutional Review Board) application. It can include any</span>
+<span class="sd">    relevant details such as the study population, data collection methods, ethical considerations, or</span>
+<span class="sd">    any other information that is important for the IRB review process</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">      The function `generate_irb` returns the contents of the response generated by the IRB assistant.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">get_irb_assistant_response</span><span class="p">(</span>
+        <span class="n">hypothesis</span><span class="o">=</span><span class="n">hypothesis</span><span class="p">,</span>
+        <span class="n">inclusion</span><span class="o">=</span><span class="n">inclusion</span><span class="p">,</span>
+        <span class="n">time_window</span><span class="o">=</span><span class="n">time_window</span><span class="p">,</span>
+        <span class="n">exclusion</span><span class="o">=</span><span class="n">exclusion</span><span class="p">,</span>
+        <span class="n">design</span><span class="o">=</span><span class="n">design</span><span class="p">,</span>
+        <span class="n">details</span><span class="o">=</span><span class="n">details</span><span class="p">,</span>
+        <span class="n">chat</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">CHAT</span><span class="p">,</span>
+        <span class="n">chat_prompt</span><span class="o">=</span><span class="n">prompts</span><span class="o">.</span><span class="n">irb_chat_prompt</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">contents</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data/" class="btn btn-neutral float-right" title="data">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../data/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
