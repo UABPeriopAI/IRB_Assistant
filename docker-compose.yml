@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  streamlit_app:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+    secrets:
+      - db_server
+      - db_name
+      - db_user
+      - db_password
+      - openai_api_key 
+secrets:
+  db_server:
+    file: secrets/db_server.txt
+  db_name:
+    file: secrets/db_name.txt
+  db_user:
+    file: secrets/db_user.txt
+  db_password:
+    file: secrets/db_password.txt
+  openai_api_key:
+    file: secrets/openai_api_key.txt
+  gitlab_token:
+    file: secrets/gitlab_token.txt
