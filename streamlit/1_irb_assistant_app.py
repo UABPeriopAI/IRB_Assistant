@@ -11,9 +11,10 @@ from llm_utils.streamlit_common import apply_uab_font, hide_streamlit_branding
 from llm_utils.text_format import convert_markdown_docx
 
 import IRB_Assistant.prompts as irb_assistant_prompts
-import IRB_Assistant_config.app_config as irb_assistant_app_config
+# import IRB_Assistant_config.app_config as irb_assistant_app_config
 import IRB_Assistant_config.boilerplate as IRB_boilerplate
 import IRB_Assistant_config.config as irb_Assistant_config
+
 import streamlit as st
 from IRB_Assistant.generate import (
     get_irb_assistant_response,
@@ -27,7 +28,7 @@ def on_accept_click():
 
 def show_irb_page(template_location=irb_Assistant_config.TEMPLATE):
     # openai
-    os.environ["OPENAI_API_KEY"] = irb_assistant_app_config.OPENAI_API_KEY
+    # os.environ["OPENAI_API_KEY"] = irb_assistant_app_config.OPENAI_API_KEY
 
     # page metadata
     st.set_page_config(
@@ -289,13 +290,13 @@ It should make your work faster, but it can't do *all* the work for you.
                         exclusion=exclusion_criteria,
                         design=study_design,
                         details=other_details,
-                        chat=irb_Assistant_config.CHAT,
+                        chat_config=st.session_state.chat_config,
                         chat_prompt=irb_assistant_prompts.irb_chat_prompt,
                     )
                     generated_text = result.content
                     variable_list_response = get_variable_assistant_response(
                         generated_protocol=generated_text,
-                        chat=irb_Assistant_config.CHAT,
+                        chat_config=st.session_state.chat_config,
                         chat_prompt=irb_assistant_prompts.variable_chat_prompt,
                     )
                 response_time = datetime.now()
@@ -331,54 +332,54 @@ It should make your work faster, but it can't do *all* the work for you.
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",  # correct MIME type for docx
                 )
 
-            try:
-                with get_db_connection(
-                    db_server=irb_assistant_app_config.DB_SERVER,
-                    db_name=irb_assistant_app_config.DB_NAME,
-                    db_user=irb_assistant_app_config.DB_USER,
-                    db_password=irb_assistant_app_config.DB_PASSWORD,
-                ) as conn:
-                    # tempting to move this into llm_utils, but the query will be unique to each app.
-                    cursor = conn.cursor()
-                    query = """
-                            INSERT INTO [dbo].[irb_assistant] (
-                                research_question, 
-                                inclusion_criteria, 
-                                time_window, 
-                                exclusion_criteria, 
-                                study_design, 
-                                other_details, 
-                                model_response, 
-                                input_time, 
-                                response_time,
-                                total_cost
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                            """
+            # try:
+            #     with get_db_connection(
+            #         db_server=irb_assistant_app_config.DB_SERVER,
+            #         db_name=irb_assistant_app_config.DB_NAME,
+            #         db_user=irb_assistant_app_config.DB_USER,
+            #         db_password=irb_assistant_app_config.DB_PASSWORD,
+            #     ) as conn:
+            #         # tempting to move this into llm_utils, but the query will be unique to each app.
+            #         cursor = conn.cursor()
+            #         query = """
+            #                 INSERT INTO [dbo].[irb_assistant] (
+            #                     research_question, 
+            #                     inclusion_criteria, 
+            #                     time_window, 
+            #                     exclusion_criteria, 
+            #                     study_design, 
+            #                     other_details, 
+            #                     model_response, 
+            #                     input_time, 
+            #                     response_time,
+            #                     total_cost
+            #                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            #                 """
 
-                    cursor.execute(
-                        query,
-                        (
-                            research_question,
-                            inclusion_criteria,
-                            time_window,
-                            exclusion_criteria,
-                            study_design,
-                            other_details,
-                            variable_list_response.content + "\n\n" + generated_text,
-                            submit_time,
-                            response_time,
-                            response_meta.total_cost,
-                        ),
-                    )
+            #         cursor.execute(
+            #             query,
+            #             (
+            #                 research_question,
+            #                 inclusion_criteria,
+            #                 time_window,
+            #                 exclusion_criteria,
+            #                 study_design,
+            #                 other_details,
+            #                 variable_list_response.content + "\n\n" + generated_text,
+            #                 submit_time,
+            #                 response_time,
+            #                 response_meta.total_cost,
+            #             ),
+            #         )
 
-                st.success(
-                    "To comply with a Health System Information Security request, submissions are recorded for potential review."
-                )
-            except Exception as e:
-                st.error(
-                    "Something went wrong, and your submission was not recorded for review. Give the following message when asking for help."
-                )
-                st.error(e)
+            #     st.success(
+            #         "To comply with a Health System Information Security request, submissions are recorded for potential review."
+            #     )
+            # except Exception as e:
+            #     st.error(
+            #         "Something went wrong, and your submission was not recorded for review. Give the following message when asking for help."
+            #     )
+            #     st.error(e)
 
 
 if __name__ == "__main__":

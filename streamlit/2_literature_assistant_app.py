@@ -9,9 +9,11 @@ from llm_utils.text_format import convert_markdown_docx
 
 import IRB_Assistant.data as irb_data
 import IRB_Assistant.generate as irb_generate
-import IRB_Assistant_config.app_config as lit_app_config
+# import IRB_Assistant_config.app_config as lit_app_config
 import IRB_Assistant_config.config as irb_assistant_config
 import streamlit as st
+from login_handler import AzureKeyHandler, OpenaiKeyHandler
+
 
 
 def show_literature_page():
@@ -70,8 +72,7 @@ def show_literature_page():
         while len(article_ids) < irb_assistant_config.MIN_ARTICLES and loop_counter < 6:
             with st.spinner("Generating pubmed search string."):
                 search_string, response_meta = irb_generate.generate_search_string(
-                    research_q, loop_counter, previous_query
-                )
+                    research_q,  loop_counter, previous_query, chat_config=st.session_state.chat_config)
                 cost += response_meta.total_cost
                 previous_query = search_string
                 loop_counter += 1
@@ -138,7 +139,7 @@ def show_literature_page():
                     additional_articles += reference
             with st.spinner("Summarizing and evaluating novelty"):
                 overall_introduction, response_meta = irb_generate.generate_overall_introduction(
-                    research_q, article_infos, query_type
+                    research_q, article_infos, query_type,chat_config=st.session_state.chat_config
                 )
             response_time = datetime.now()
             cost += response_meta.total_cost
@@ -166,51 +167,51 @@ def show_literature_page():
         else:
             st.write("No articles found")
 
-        try:
-            with get_db_connection(
-                db_server=lit_app_config.DB_SERVER,
-                db_name=lit_app_config.DB_NAME,
-                db_user=lit_app_config.DB_USER,
-                db_password=lit_app_config.DB_PASSWORD,
-            ) as conn:
-                # tempting to move this into llm_utils, but the query will be unique to each app.
-                cursor = conn.cursor()
-                query = """
-                        INSERT INTO [dbo].[literature_helper] (
-                            email_address, 
-                            research_idea, 
-                            purpose_request, 
-                            citations, 
-                            literature_summary, 
-                            pubmed_query, 
-                            input_time, 
-                            response_time,
-                            total_cost
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                        """
+        # try:
+        #     with get_db_connection(
+        #         db_server=lit_app_config.DB_SERVER,
+        #         db_name=lit_app_config.DB_NAME,
+        #         db_user=lit_app_config.DB_USER,
+        #         db_password=lit_app_config.DB_PASSWORD,
+        #     ) as conn:
+        #         # tempting to move this into llm_utils, but the query will be unique to each app.
+        #         cursor = conn.cursor()
+        #         query = """
+        #                 INSERT INTO [dbo].[literature_helper] (
+        #                     email_address, 
+        #                     research_idea, 
+        #                     purpose_request, 
+        #                     citations, 
+        #                     literature_summary, 
+        #                     pubmed_query, 
+        #                     input_time, 
+        #                     response_time,
+        #                     total_cost
+        #                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        #                 """
 
-                cursor.execute(
-                    query,
-                    (
-                        email,
-                        research_q,
-                        query_type,
-                        bibliography + "\n\n" + additional_articles,
-                        overall_introduction,
-                        search_string,
-                        input_time,
-                        response_time,
-                        cost,
-                    ),
-                )
-            st.success(
-                "To comply with a Health System Information Security request, submissions are recorded for potential review."
-            )
-        except Exception as e:
-            st.error(
-                "Something went wrong, and your submission was not recorded for review. Give the following message when asking for help."
-            )
-            st.error(e)
+        #         cursor.execute(
+        #             query,
+        #             (
+        #                 email,
+        #                 research_q,
+        #                 query_type,
+        #                 bibliography + "\n\n" + additional_articles,
+        #                 overall_introduction,
+        #                 search_string,
+        #                 input_time,
+        #                 response_time,
+        #                 cost,
+        #             ),
+        #         )
+        #     st.success(
+        #         "To comply with a Health System Information Security request, submissions are recorded for potential review."
+        #     )
+        # except Exception as e:
+        #     st.error(
+        #         "Something went wrong, and your submission was not recorded for review. Give the following message when asking for help."
+        #     )
+        #     st.error(e)
 
 
 if __name__ == "__main__":

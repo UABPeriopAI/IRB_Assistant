@@ -3,6 +3,8 @@
 from pathlib import Path
 
 from langchain.chat_models import ChatOpenAI
+from langchain.chat_models import AzureChatOpenAI
+
 
 # Development Directories
 BASE_DIR = Path(__file__).parent.parent.absolute()
@@ -21,17 +23,31 @@ RESULTS_DIR = Path(DATA_DIR, "results")
 ASSETS_DIR = Path(BASE_DIR, "assets")
 TEMPLATE = Path(ASSETS_DIR, "numbered_template.docx")
 
-CHAT = ChatOpenAI(
-    openai_api_base="https://mockgpt.wiremockapi.cloud/v1",
-    openai_api_key="sk-aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr",
-    model="gpt-3.5-turbo"
+chat_configs = {}
+
+azure_chat_config =  AzureChatOpenAI(
+    openai_api_base="https://nlp-ai-svc.openai.azure.com/",
+    openai_api_version="2023-06-01-preview",
+    deployment_name="ChatGPT4",
+    openai_api_type="azure",
+    temperature=0,
+    model_name="gpt-4"
 )
 
-PUBMED_CHAT = ChatOpenAI(
-    openai_api_base="https://mockgpt.wiremockapi.cloud/v1",
-    openai_api_key="sk-aqrgjxkpilpc1wlpjeg0gfsc9zxjh3zr",
-    model="gpt-4"
-)
+
+azure_pubmed_chat_config = AzureChatOpenAI(
+    openai_api_base="https://nlp-ai-svc.openai.azure.com/",
+    openai_api_version="2023-06-01-preview",
+    deployment_name="ChatGPT4",
+    openai_api_type="azure",
+    temperature=0.9,
+    model_name="gpt-4")
+
+
+
+openai_chat_config = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", request_timeout=300)
+
+openai_pubmed_chat_config = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", request_timeout=300)
 
 
 # lit search

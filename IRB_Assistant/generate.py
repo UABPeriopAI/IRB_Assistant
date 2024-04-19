@@ -1,9 +1,11 @@
 from langchain.callbacks import get_openai_callback
 from langchain.schema import HumanMessage, SystemMessage
+import streamlit as st
+
 
 import IRB_Assistant.prompts as irb_assistant_prompts
 import IRB_Assistant_config.config as irb_assistant_config
-
+from login_handler import AzureKeyHandler, OpenaiKeyHandler
 
 def get_irb_assistant_response(
     hypothesis: str,
@@ -12,7 +14,7 @@ def get_irb_assistant_response(
     exclusion: str,
     design: str,
     details: str,
-    chat=irb_assistant_config.CHAT,
+    chat_config: str,
     chat_prompt=irb_assistant_prompts.irb_chat_prompt,
 ):
     """
@@ -52,7 +54,7 @@ def get_irb_assistant_response(
       the response from the chatbot assistant.
     """
 
-    response = chat(
+    response = chat_config(
         chat_prompt.format_prompt(
             question=hypothesis,
             inclusion=inclusion,
@@ -67,7 +69,7 @@ def get_irb_assistant_response(
 
 def get_variable_assistant_response(
     generated_protocol: str,
-    chat=irb_assistant_config.CHAT,
+    chat_config: str,
     chat_prompt=irb_assistant_prompts.variable_chat_prompt,
 ):
     """
@@ -88,11 +90,11 @@ def get_variable_assistant_response(
     assistant when given a generated protocol as input.
     """
 
-    response = chat(chat_prompt.format_prompt(protocol=generated_protocol).to_messages())
+    response = chat_config(chat_prompt.format_prompt(protocol=generated_protocol).to_messages())
     return response
-
-
-def generate_search_string(input_research_q, loop_n=0, last_query=""):
+# !!!
+# ADDDDDDDD the default config: def generate_search_string(input_research_q, chat_config, loop_n=0, last_query=""):
+def generate_search_string(input_research_q, loop_n, last_query, chat_config):
     """
     The `generate_search_string` function takes an input research question, an optional loop number, and
     an optional last query. It generates a search string using OpenAI's ChatGPT model and returns the
@@ -112,7 +114,8 @@ def generate_search_string(input_research_q, loop_n=0, last_query=""):
     model.
     """
     prompt = irb_assistant_prompts.PUBMED_PROMPT.format(input_research_q)
-    chat = irb_assistant_config.PUBMED_CHAT
+
+
     if loop_n > 0:
         prompt = prompt + irb_assistant_prompts.FEW_RESULTS_PROMPT + last_query
     with get_openai_callback() as response_meta:
@@ -122,12 +125,12 @@ def generate_search_string(input_research_q, loop_n=0, last_query=""):
             ),
             HumanMessage(content=prompt),
         ]
-        response = chat(messages)
+        response = chat_config(messages)
 
     return response.content, response_meta
 
 
-def generate_overall_introduction(question, abstracts, help_type):
+def generate_overall_introduction(question, abstracts, help_type, chat_config):
     """
     The function `generate_overall_introduction` takes a question, a list of abstracts, and a help type
     as input, and generates an overall introduction by summarizing the literature related to the
@@ -149,7 +152,7 @@ def generate_overall_introduction(question, abstracts, help_type):
     prompt = irb_assistant_prompts.SUMMARIZE_LITERATURE_PROMPT.format(
         question, help_type, abstracts
     )
-    chat = irb_assistant_config.CHAT
+   
     with get_openai_callback() as response_meta:
         messages = [
             SystemMessage(
@@ -157,14 +160,14 @@ def generate_overall_introduction(question, abstracts, help_type):
             ),
             HumanMessage(content=prompt),
         ]
-        response = chat(messages)
+        response = chat_config(messages)
 
     return response.content, response_meta
 
 
 def generate_simplified_text(
     complex_text: str,
-    chat=irb_assistant_config.CHAT,
+    chat_config: str,
     chat_prompt=irb_assistant_prompts.simplify_chat_prompt,
 ):
     """
@@ -186,5 +189,5 @@ def generate_simplified_text(
     given the complex text as input.
     """
     with get_openai_callback() as response_meta:
-        response = chat(chat_prompt.format_prompt(text=complex_text).to_messages())
+        response = chat_config(chat_prompt.format_prompt(text=complex_text).to_messages())
     return response, response_meta
