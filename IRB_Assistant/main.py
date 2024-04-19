@@ -1,11 +1,9 @@
 import warnings
-
+import streamlit as st
 import typer
-
 from IRB_Assistant import prompts
 from IRB_Assistant.generate import get_irb_assistant_response
 from IRB_Assistant_config import config
-
 # Initialize Typer CLI app
 app = typer.Typer()
 warnings.filterwarnings("ignore")
@@ -51,7 +49,7 @@ def generate_irb(
         exclusion=exclusion,
         design=design,
         details=details,
-        chat=config.CHAT,
+        chat=st.session_state.chat_config,
         chat_prompt=prompts.irb_chat_prompt,
     )
 
