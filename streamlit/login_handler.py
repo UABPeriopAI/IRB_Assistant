@@ -3,7 +3,6 @@ import os
 import requests
 import IRB_Assistant_config.config as irb_assistant_config
 
-
 class BYOK_Handler():
     def __init__(self):
         self.api_key_type = None
@@ -30,15 +29,6 @@ class AzureKeyHandler(BYOK_Handler):
     def __init__(self):
         super().__init__()
 
-    # def get_chat_function(self):
-    #     print('child - ', self.CHAT)
-
-    #     super().get_chat_function()
-
-
-    # def get_pubmed_chat_function(self):
-    #     super().get_pubmed_chat_function()
-
     def _api_key_validation(self, api_key):
         response = requests.get('https://nlp-ai-svc.openai.azure.com/openai/models?api-version=2024-02-01', headers={ 'api-key': api_key})
 
@@ -64,15 +54,8 @@ class OpenaiKeyHandler(BYOK_Handler):
     def __init__(self):
         super().__init__()
 
-    
-    # def get_chat_function(self):
-    #     super().get_chat_function()
-
-    # def get_pubmed_chat_function(self):
-    #     super().get_pubmed_chat_function()
-
     def _api_key_validation(self, api_key):
-        response = requests.get('https://api.openai.com/v1/engines', headers={ 'api-key': api_key})
+        response = requests.get('https://api.openai.com/v1/engines', headers={ 'Authorization': 'Bearer ' + api_key})
 
         if response.status_code == 200:
             return True
