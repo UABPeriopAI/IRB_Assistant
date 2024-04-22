@@ -72,7 +72,7 @@ def show_literature_page():
         while len(article_ids) < irb_assistant_config.MIN_ARTICLES and loop_counter < 6:
             with st.spinner("Generating pubmed search string."):
                 search_string, response_meta = irb_generate.generate_search_string(
-                    research_q,  loop_counter, previous_query, chat_config=st.session_state.chat_config)
+                    research_q,  loop_counter, previous_query, chat_config=st.session_state.pubmed_chat_config)
                 cost += response_meta.total_cost
                 previous_query = search_string
                 loop_counter += 1
