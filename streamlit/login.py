@@ -16,24 +16,30 @@ if "logged_in" not in st.session_state:
 
 def log_in():
     api_key = st.session_state["api_key"]
-    print("api_key", api_key)
-    # !!!
-    # ADDD change -   if elif else
-    key_handler = AzureKeyHandler() if api_key_type == "Azure" else OpenaiKeyHandler()
+    # print("api_key", api_key)
+
+    if api_key_type == "Azure":
+        key_handler = AzureKeyHandler() 
+        
+    elif api_key_type == "OpenAI":
+        key_handler = OpenaiKeyHandler()
+
+    else:
+        st.error("Select the API key type.")
 
     initialized = key_handler.initialize_api_key(api_key)
     if initialized:
         st.session_state.logged_in = True 
         st.session_state.chat_config = key_handler.get_chat_function()
+        st.session_state.pubmed_chat_config = key_handler.get_pubmed_chat_function()
+
 
 if not st.session_state["logged_in"]:
     # hide_pages(["IRB Assistant", "Literature Assistant", "Simplify Text"])
-
-    api_key_type = st.selectbox('Select the type of your API key',
-    ('OpenAI', 'Azure'))
-
-    st.text_input("Enter your API key", key="api_key", type="password", on_change=log_in)
-
+    st.title("Bring your own key")
+        
+    api_key_type = st.selectbox('Select the type of your API key', ('OpenAI', 'Azure'))
+    api_key = st.text_input("Enter your API key", key="api_key", type="password", on_change=log_in)
 
 else: 
     st.title("Home")
