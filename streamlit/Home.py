@@ -1,9 +1,8 @@
+from llm_utils.login import AzureKeyHandler, OpenaiKeyHandler
+import os
+import IRB_Assistant_config.config as irb_assistant_config
 import streamlit as st
 from st_pages import Page, show_pages, hide_pages
-import os
-import requests
-import IRB_Assistant_config.config as irb_assistant_config
-from IRB_Assistant.login import log_in
 
 st.set_page_config(
     page_title="IRB Assistant",
@@ -13,16 +12,36 @@ st.set_page_config(
 if "logged_in" not in st.session_state:
     st.session_state["logged_in"] = False
 
-# Initalize state
-if "api_key" not in st.session_state:
-    st.session_state["api_key"] = None
+
+def log_in():
+    api_key = st.session_state["api_key"]
+    # print("api_key", api_key)
+
+    if api_key_type == "Azure":
+        key_handler = AzureKeyHandler(irb_assistant_config.azure_chat_config, 
+                                        irb_assistant_config.azure_pubmed_chat_config) 
+        
+    elif api_key_type == "OpenAI":
+        key_handler = OpenaiKeyHandler(irb_assistant_config.openai_chat_config, 
+                                        irb_assistant_config.openai_pubmed_chat_config)
+
+    else:
+        st.error("Select the API key type.")
+
+    initialized = key_handler.initialize_api_key(api_key)
+
+    # print(initialized)
+    if initialized:
+        st.session_state.logged_in = True 
+        st.session_state.chat_config = key_handler.get_chat_function()
+        st.session_state.pubmed_chat_config = key_handler.get_pubmed_chat_function()
 
 if not st.session_state["logged_in"]:
     # hide_pages(["IRB Assistant", "Literature Assistant", "Simplify Text"])
     st.title("Bring your own key")
         
     api_key_type = st.selectbox('Select the type of your API key', ('OpenAI', 'Azure'))
-    api_key = st.text_input("Enter your API key", type="password", on_change=log_in(api_key_type))
+    api_key = st.text_input("Enter your API key", key = "api_key", type="password", on_change=log_in)
 
 else: 
     st.title("Home")
