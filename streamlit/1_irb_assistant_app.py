@@ -1,34 +1,26 @@
 # streamlit_app.py
 
-import os
-import tempfile
 from datetime import datetime
-
-import pypandoc
 from langchain.callbacks import get_openai_callback
-from llm_utils.database import get_db_connection
 from llm_utils.streamlit_common import apply_uab_font, hide_streamlit_branding
 from llm_utils.text_format import convert_markdown_docx
-
 import IRB_Assistant.prompts as irb_assistant_prompts
-# import IRB_Assistant_config.app_config as irb_assistant_app_config
-import IRB_Assistant_config.boilerplate as IRB_boilerplate
-import IRB_Assistant_config.config as irb_Assistant_config
-
-import streamlit as st
 from IRB_Assistant.generate import (
     get_irb_assistant_response,
     get_variable_assistant_response,
 )
+import IRB_Assistant_config.boilerplate as IRB_boilerplate
+import IRB_Assistant_config.config as irb_Assistant_config
+import streamlit as st
 
+
+# TODO: add docuemntation
 
 def on_accept_click():
     st.session_state["accepted_terms"] = True
 
 
 def show_irb_page(template_location=irb_Assistant_config.TEMPLATE):
-    # openai
-    # os.environ["OPENAI_API_KEY"] = irb_assistant_app_config.OPENAI_API_KEY
 
     # page metadata
     st.set_page_config(
@@ -77,6 +69,9 @@ It should make your work faster, but it can't do *all* the work for you.
         # page content
         st.write("## IRB Application Information")
         st.write("### Research question (ideally in PICOS format)")
+
+    # TODO: move the textarea default text to config
+
         research_question = st.text_area(
             "PICOS Format: Patient, problem, or population (P), Investigated condition (I), Comparison condition (C), Outcome (O), Study type (S)",
             "Retrospectively, In adult patients undergoing surgery, how does the use of regional anesthesia techniques compare to general anesthesia in terms of postoperative pain management?",
@@ -89,11 +84,12 @@ It should make your work faster, but it can't do *all* the work for you.
         )
 
         st.write("### Inclusion criteria (i.e., patient population)")
+        # TODO: move the folowing to config
+
         inclusion_criteria = st.text_area(
             "A list of specific conditions or characteristics that qualify potential participants from taking part in the study.",
             "Patients who underwent surgery and received either regional or general anesthesia.",
         )
-
         exclusion_criteria_options = [
             "<18 years (or bodyweight <50kg if age unknown)",
             "prisoners",
@@ -126,7 +122,7 @@ It should make your work faster, but it can't do *all* the work for you.
 
         # Convert the list into a string, with each element separated by a comma
         exclusion_criteria = ", ".join(exclusion_criteria)
-
+# TODO: move options to config
         study_design_options = [
             "Retrospective research",
             "Quality improvement/assurance",
@@ -281,7 +277,7 @@ It should make your work faster, but it can't do *all* the work for you.
                     """
             )
             with st.spinner("Drafting. This may take a few minutes..."):
-                submit_time = datetime.now()
+                # TODO: delete response_meta
                 with get_openai_callback() as response_meta:
                     result = get_irb_assistant_response(
                         hypothesis=research_question,
@@ -299,8 +295,8 @@ It should make your work faster, but it can't do *all* the work for you.
                         chat_config=st.session_state.chat_config,
                         chat_prompt=irb_assistant_prompts.variable_chat_prompt,
                     )
-                response_time = datetime.now()
                 output_text = ""
+                # TODO: nice to have - compile.py
                 output_text = (
                     IRB_boilerplate.CONTRACT
                     + study_specific_note
@@ -331,55 +327,6 @@ It should make your work faster, but it can't do *all* the work for you.
                     file_name="DRAFT_protocol_form.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",  # correct MIME type for docx
                 )
-
-            # try:
-            #     with get_db_connection(
-            #         db_server=irb_assistant_app_config.DB_SERVER,
-            #         db_name=irb_assistant_app_config.DB_NAME,
-            #         db_user=irb_assistant_app_config.DB_USER,
-            #         db_password=irb_assistant_app_config.DB_PASSWORD,
-            #     ) as conn:
-            #         # tempting to move this into llm_utils, but the query will be unique to each app.
-            #         cursor = conn.cursor()
-            #         query = """
-            #                 INSERT INTO [dbo].[irb_assistant] (
-            #                     research_question, 
-            #                     inclusion_criteria, 
-            #                     time_window, 
-            #                     exclusion_criteria, 
-            #                     study_design, 
-            #                     other_details, 
-            #                     model_response, 
-            #                     input_time, 
-            #                     response_time,
-            #                     total_cost
-            #                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            #                 """
-
-            #         cursor.execute(
-            #             query,
-            #             (
-            #                 research_question,
-            #                 inclusion_criteria,
-            #                 time_window,
-            #                 exclusion_criteria,
-            #                 study_design,
-            #                 other_details,
-            #                 variable_list_response.content + "\n\n" + generated_text,
-            #                 submit_time,
-            #                 response_time,
-            #                 response_meta.total_cost,
-            #             ),
-            #         )
-
-            #     st.success(
-            #         "To comply with a Health System Information Security request, submissions are recorded for potential review."
-            #     )
-            # except Exception as e:
-            #     st.error(
-            #         "Something went wrong, and your submission was not recorded for review. Give the following message when asking for help."
-            #     )
-            #     st.error(e)
 
 
 if __name__ == "__main__":
