@@ -1,9 +1,8 @@
 import time
 from datetime import datetime
 from urllib.error import HTTPError
-
 from Bio import Entrez
-
+import streamlit as st
 
 def search_pubmed_articles(
     pubmed_string, email, max_results=10, streamlit_context=False, max_retries=3, delay_seconds=5
@@ -41,7 +40,6 @@ def search_pubmed_articles(
                 print(error_message)
                 print(wait_message)
                 if streamlit_context:
-                    import streamlit as st
 
                     st.warning(error_message)
                     st.warning(wait_message)
@@ -51,15 +49,13 @@ def search_pubmed_articles(
                 print(error_message)
                 print(final_message)
                 if streamlit_context:
-                    import streamlit as st
 
                     st.warning(error_message)
                     st.warning(final_message)
                 return []
 
 
-import time
-from urllib.error import HTTPError
+
 
 
 def fetch_article_details(pubmed_ids, max_retries=3, delay_seconds=5, streamlit_context=False):

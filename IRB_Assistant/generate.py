@@ -1,11 +1,6 @@
 from langchain.callbacks import get_openai_callback
 from langchain.schema import HumanMessage, SystemMessage
-import streamlit as st
-
-
 import IRB_Assistant.prompts as irb_assistant_prompts
-import IRB_Assistant_config.config as irb_assistant_config
-from login_handler import AzureKeyHandler, OpenaiKeyHandler
 
 def get_irb_assistant_response(
     hypothesis: str,
@@ -92,8 +87,7 @@ def get_variable_assistant_response(
 
     response = chat_config(chat_prompt.format_prompt(protocol=generated_protocol).to_messages())
     return response
-# !!!
-# ADDDDDDDD the default config: def generate_search_string(input_research_q, chat_config, loop_n=0, last_query=""):
+
 def generate_search_string(input_research_q, loop_n, last_query, chat_config):
     """
     The `generate_search_string` function takes an input research question, an optional loop number, and
@@ -155,6 +149,7 @@ def generate_overall_introduction(question, abstracts, help_type, chat_config):
    
     with get_openai_callback() as response_meta:
         messages = [
+            # TODO: update the prompt
             SystemMessage(
                 content="You are an expert at conducting medical literature searches. You help beginning researchers."
             ),
