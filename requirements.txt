@@ -175,7 +175,7 @@ langsmith==0.1.49
     #   langchain-community
     #   langchain-core
     #   llm-utils
-llm-utils @ git+https://ai_web:xu3wm_hf-5pMMfzXtWaG@gitlab.rc.uab.edu/anes_ai/llm_apps/llm_utils.git@main
+llm-utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
     # via -r requirements.in
 markdown==3.6
     # via
