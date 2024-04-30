@@ -1,8 +1,7 @@
-from llm_utils.login import AzureKeyHandler, OpenaiKeyHandler
 import os
-import IRB_Assistant_config.config as irb_assistant_config
 import streamlit as st
 from st_pages import Page, show_pages, hide_pages
+from llm_utils.login import AzureKeyHandler, OpenaiKeyHandler
 
 st.set_page_config(
     page_title="IRB Assistant",
@@ -15,7 +14,10 @@ if "logged_in" not in st.session_state:
 
 def log_in():
     api_key = st.session_state["api_key"]
-    # print("api_key", api_key)
+    os.environ["OPENAI_API_KEY"] = api_key
+
+    import IRB_Assistant_config.config as irb_assistant_config
+
 
     if api_key_type == "Azure":
         key_handler = AzureKeyHandler(irb_assistant_config.azure_chat_config, 
@@ -37,7 +39,6 @@ def log_in():
         st.session_state.pubmed_chat_config = key_handler.get_pubmed_chat_function()
 
 if not st.session_state["logged_in"]:
-    # hide_pages(["IRB Assistant", "Literature Assistant", "Simplify Text"])
     st.title("Bring your own key")
         
     api_key_type = st.selectbox('Select the type of your API key', ('OpenAI', 'Azure'))
@@ -50,7 +51,7 @@ else:
     show_pages(
     [
         Page("streamlit/1_irb_assistant_app.py", "IRB Assistant ⚖️"),
-        Page("streamlit/3_simplify_text_app.py", "Simplify Text 🔠"),
+        Page("streamlit/2_simplify_text_app.py", "Simplify Text 🔠"),
 
     ]
 )
