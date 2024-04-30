@@ -1,9 +1,9 @@
 streamlit
 rich
-typer==0.6.1
+typer
 llm_utils @ git+https://ai_web:xu3wm_hf-5pMMfzXtWaG@gitlab.rc.uab.edu/anes_ai/llm_apps/llm_utils.git@main
 openai
 langchain
 pypandoc
 biopython
-
+st-pages
