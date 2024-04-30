@@ -25,8 +25,12 @@ TEMPLATE = Path(ASSETS_DIR, "numbered_template.docx")
 
 chat_configs = {}
 
+# END points
+AZURE_END_POINT = 'https://nlp-ai-svc.openai.azure.com'
+OPENAI_END_POINT = 'https://api.openai.com/v1/engines'
+
 azure_chat_config =  AzureChatOpenAI(
-    openai_api_base="https://nlp-ai-svc.openai.azure.com/",
+    openai_api_base=AZURE_END_POINT,
     openai_api_version="2023-06-01-preview",
     deployment_name="ChatGPT4",
     openai_api_type="azure",
@@ -36,7 +40,7 @@ azure_chat_config =  AzureChatOpenAI(
 
 
 azure_pubmed_chat_config = AzureChatOpenAI(
-    openai_api_base="https://nlp-ai-svc.openai.azure.com/",
+    openai_api_base=AZURE_END_POINT,
     openai_api_version="2023-06-01-preview",
     deployment_name="ChatGPT4",
     openai_api_type="azure",
@@ -48,6 +52,8 @@ azure_pubmed_chat_config = AzureChatOpenAI(
 openai_chat_config = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", request_timeout=300)
 
 openai_pubmed_chat_config = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", request_timeout=300)
+
+
 
 
 # lit search

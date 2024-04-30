@@ -23,14 +23,16 @@ def log_in():
         key_handler = AzureKeyHandler(irb_assistant_config.azure_chat_config, 
                                         irb_assistant_config.azure_pubmed_chat_config) 
         
+        initialized = key_handler.initialize_api_key(api_key, irb_assistant_config.AZURE_END_POINT)
+
     elif api_key_type == "OpenAI":
         key_handler = OpenaiKeyHandler(irb_assistant_config.openai_chat_config, 
                                         irb_assistant_config.openai_pubmed_chat_config)
+        initialized = key_handler.initialize_api_key(api_key, irb_assistant_config.OPENAI_END_POINT)
 
     else:
         st.error("Select the API key type.")
 
-    initialized = key_handler.initialize_api_key(api_key)
 
     # print(initialized)
     if initialized:
