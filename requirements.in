@@ -1,7 +1,7 @@
 streamlit
 rich
 typer
-llm_utils @ git+https://ai_web:xu3wm_hf-5pMMfzXtWaG@gitlab.rc.uab.edu/anes_ai/llm_apps/llm_utils.git@main
+llm_utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
 openai
 langchain
 pypandoc
