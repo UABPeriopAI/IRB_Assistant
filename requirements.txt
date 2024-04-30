@@ -8,401 +8,207 @@ aiohttp==3.9.5
     # via
     #   langchain
     #   langchain-community
-    #   llm-utils
 aiosignal==1.3.1
-    # via
-    #   aiohttp
-    #   llm-utils
+    # via aiohttp
 altair==5.3.0
-    # via
-    #   llm-utils
-    #   streamlit
+    # via streamlit
 annotated-types==0.6.0
-    # via
-    #   llm-utils
-    #   pydantic
+    # via pydantic
 anyio==4.3.0
     # via
     #   httpx
-    #   llm-utils
     #   openai
 async-timeout==4.0.3
     # via
     #   aiohttp
     #   langchain
-    #   llm-utils
 attrs==23.2.0
     # via
     #   aiohttp
     #   jsonschema
-    #   llm-utils
     #   referencing
 biopython==1.83
-    # via
-    #   -r requirements.in
-    #   llm-utils
-black==24.4.0
-    # via llm-utils
+    # via -r requirements.in
 blinker==1.7.0
-    # via
-    #   llm-utils
-    #   streamlit
+    # via streamlit
 cachetools==5.3.3
-    # via
-    #   llm-utils
-    #   streamlit
+    # via streamlit
 certifi==2024.2.2
     # via
     #   httpcore
     #   httpx
-    #   llm-utils
     #   requests
 charset-normalizer==3.3.2
-    # via
-    #   llm-utils
-    #   requests
+    # via requests
 click==8.1.7
     # via
-    #   black
-    #   llm-utils
-    #   mkdocs
-    #   mkdocstrings
     #   streamlit
     #   typer
 dataclasses-json==0.6.4
     # via
     #   langchain
     #   langchain-community
-    #   llm-utils
 distro==1.9.0
-    # via
-    #   llm-utils
-    #   openai
+    # via openai
 exceptiongroup==1.2.1
-    # via
-    #   anyio
-    #   llm-utils
-flake8==7.0.0
-    # via llm-utils
+    # via anyio
 frozenlist==1.4.1
     # via
     #   aiohttp
     #   aiosignal
-    #   llm-utils
-ghp-import==2.1.0
-    # via
-    #   llm-utils
-    #   mkdocs
 gitdb==4.0.11
-    # via
-    #   gitpython
-    #   llm-utils
+    # via gitpython
 gitpython==3.1.43
-    # via
-    #   llm-utils
-    #   streamlit
+    # via streamlit
 greenlet==3.0.3
-    # via
-    #   llm-utils
-    #   sqlalchemy
+    # via sqlalchemy
 h11==0.14.0
-    # via
-    #   httpcore
-    #   llm-utils
+    # via httpcore
 httpcore==1.0.5
-    # via
-    #   httpx
-    #   llm-utils
+    # via httpx
 httpx==0.27.0
-    # via
-    #   llm-utils
-    #   openai
+    # via openai
 idna==3.7
     # via
     #   anyio
     #   httpx
-    #   llm-utils
     #   requests
     #   yarl
 jinja2==3.1.3
     # via
     #   altair
-    #   llm-utils
-    #   mkdocs
-    #   mkdocstrings
     #   pydeck
 jsonpatch==1.33
     # via
     #   langchain
     #   langchain-core
-    #   llm-utils
 jsonpointer==2.4
-    # via
-    #   jsonpatch
-    #   llm-utils
+    # via jsonpatch
 jsonschema==4.21.1
-    # via
-    #   altair
-    #   llm-utils
+    # via altair
 jsonschema-specifications==2023.12.1
-    # via
-    #   jsonschema
-    #   llm-utils
+    # via jsonschema
 langchain==0.1.16
-    # via
-    #   -r requirements.in
-    #   llm-utils
+    # via -r requirements.in
 langchain-community==0.0.33
-    # via
-    #   langchain
-    #   llm-utils
+    # via langchain
 langchain-core==0.1.45
     # via
     #   langchain
     #   langchain-community
-    #   langchain-openai
     #   langchain-text-splitters
-    #   llm-utils
-langchain-openai==0.1.3
-    # via llm-utils
 langchain-text-splitters==0.0.1
-    # via
-    #   langchain
-    #   llm-utils
+    # via langchain
 langsmith==0.1.49
     # via
     #   langchain
     #   langchain-community
     #   langchain-core
-    #   llm-utils
 llm-utils @ git+https://github.com/UABPeriopAI/llm_utils.git@main
     # via -r requirements.in
-markdown==3.6
-    # via
-    #   llm-utils
-    #   mkdocs
-    #   mkdocs-autorefs
-    #   mkdocstrings
-    #   pymdown-extensions
 markdown-it-py==3.0.0
-    # via
-    #   llm-utils
-    #   rich
+    # via rich
 markupsafe==2.1.5
-    # via
-    #   jinja2
-    #   llm-utils
-    #   mkdocs
-    #   mkdocs-autorefs
-    #   mkdocstrings
+    # via jinja2
 marshmallow==3.21.1
-    # via
-    #   dataclasses-json
-    #   llm-utils
-mccabe==0.7.0
-    # via
-    #   flake8
-    #   llm-utils
+    # via dataclasses-json
 mdurl==0.1.2
-    # via
-    #   llm-utils
-    #   markdown-it-py
-mergedeep==1.3.4
-    # via
-    #   llm-utils
-    #   mkdocs
-mkdocs==1.5.3
-    # via
-    #   llm-utils
-    #   mkdocs-autorefs
-    #   mkdocstrings
-mkdocs-autorefs==1.0.1
-    # via
-    #   llm-utils
-    #   mkdocstrings
-mkdocstrings==0.24.3
-    # via llm-utils
+    # via markdown-it-py
 multidict==6.0.5
     # via
     #   aiohttp
-    #   llm-utils
     #   yarl
 mypy-extensions==1.0.0
-    # via
-    #   black
-    #   llm-utils
-    #   typing-inspect
+    # via typing-inspect
 numpy==1.26.4
     # via
     #   altair
     #   biopython
     #   langchain
     #   langchain-community
-    #   llm-utils
     #   pandas
     #   pyarrow
     #   pydeck
     #   streamlit
 openai==1.23.2
-    # via
-    #   -r requirements.in
-    #   langchain-openai
-    #   llm-utils
+    # via -r requirements.in
 orjson==3.10.1
-    # via
-    #   langsmith
-    #   llm-utils
+    # via langsmith
 packaging==23.2
     # via
     #   altair
-    #   black
     #   langchain-core
-    #   llm-utils
     #   marshmallow
-    #   mkdocs
     #   streamlit
 pandas==2.2.2
     # via
     #   altair
-    #   llm-utils
     #   streamlit
-pathspec==0.12.1
-    # via
-    #   black
-    #   llm-utils
-    #   mkdocs
 pillow==10.3.0
-    # via
-    #   llm-utils
-    #   streamlit
-platformdirs==4.2.0
-    # via
-    #   black
-    #   llm-utils
-    #   mkdocs
-    #   mkdocstrings
+    # via streamlit
 protobuf==4.25.3
-    # via
-    #   llm-utils
-    #   streamlit
+    # via streamlit
 pyarrow==15.0.2
-    # via
-    #   llm-utils
-    #   streamlit
-pycodestyle==2.11.1
-    # via
-    #   flake8
-    #   llm-utils
+    # via streamlit
 pydantic==2.7.0
     # via
     #   langchain
     #   langchain-core
     #   langsmith
-    #   llm-utils
     #   openai
 pydantic-core==2.18.1
-    # via
-    #   llm-utils
-    #   pydantic
+    # via pydantic
 pydeck==0.8.1b0
-    # via
-    #   llm-utils
-    #   streamlit
-pyflakes==3.2.0
-    # via
-    #   flake8
-    #   llm-utils
+    # via streamlit
 pygments==2.17.2
-    # via
-    #   llm-utils
-    #   rich
-pymdown-extensions==10.8
-    # via
-    #   llm-utils
-    #   mkdocstrings
-pymupdf==1.24.2
-    # via llm-utils
-pymupdfb==1.24.1
-    # via
-    #   llm-utils
-    #   pymupdf
+    # via rich
 pyodbc==5.1.0
     # via llm-utils
 pypandoc==1.13
-    # via
-    #   -r requirements.in
-    #   llm-utils
+    # via -r requirements.in
 python-dateutil==2.9.0.post0
-    # via
-    #   ghp-import
-    #   llm-utils
-    #   pandas
+    # via pandas
 pytz==2024.1
-    # via
-    #   llm-utils
-    #   pandas
+    # via pandas
 pyyaml==6.0.1
     # via
     #   langchain
     #   langchain-community
     #   langchain-core
-    #   llm-utils
-    #   mkdocs
-    #   pymdown-extensions
-    #   pyyaml-env-tag
-pyyaml-env-tag==0.1
-    # via
-    #   llm-utils
-    #   mkdocs
 referencing==0.34.0
     # via
     #   jsonschema
     #   jsonschema-specifications
-    #   llm-utils
-regex==2024.4.16
-    # via
-    #   llm-utils
-    #   tiktoken
 requests==2.31.0
     # via
     #   langchain
     #   langchain-community
     #   langsmith
-    #   llm-utils
     #   streamlit
-    #   tiktoken
 rich==13.7.1
     # via
     #   -r requirements.in
-    #   llm-utils
     #   streamlit
     #   typer
 rpds-py==0.18.0
     # via
     #   jsonschema
-    #   llm-utils
     #   referencing
 shellingham==1.5.4
     # via typer
 six==1.16.0
-    # via
-    #   llm-utils
-    #   python-dateutil
+    # via python-dateutil
 smmap==5.0.1
-    # via
-    #   gitdb
-    #   llm-utils
+    # via gitdb
 sniffio==1.3.1
     # via
     #   anyio
     #   httpx
-    #   llm-utils
     #   openai
 sqlalchemy==2.0.29
     # via
     #   langchain
     #   langchain-community
-    #   llm-utils
 st-pages==0.4.5
     # via -r requirements.in
 streamlit==1.33.0
@@ -415,40 +221,21 @@ tenacity==8.2.3
     #   langchain
     #   langchain-community
     #   langchain-core
-    #   llm-utils
     #   streamlit
-tiktoken==0.6.0
-    # via
-    #   langchain-openai
-    #   llm-utils
 toml==0.10.2
-    # via
-    #   llm-utils
-    #   streamlit
-tomli==2.0.1
-    # via
-    #   black
-    #   llm-utils
+    # via streamlit
 toolz==0.12.1
-    # via
-    #   altair
-    #   llm-utils
+    # via altair
 tornado==6.4
-    # via
-    #   llm-utils
-    #   streamlit
+    # via streamlit
 tqdm==4.66.2
-    # via
-    #   llm-utils
-    #   openai
+    # via openai
 typer==0.12.3
     # via -r requirements.in
 typing-extensions==4.11.0
     # via
     #   altair
     #   anyio
-    #   black
-    #   llm-utils
     #   openai
     #   pydantic
     #   pydantic-core
@@ -457,23 +244,12 @@ typing-extensions==4.11.0
     #   typer
     #   typing-inspect
 typing-inspect==0.9.0
-    # via
-    #   dataclasses-json
-    #   llm-utils
+    # via dataclasses-json
 tzdata==2024.1
-    # via
-    #   llm-utils
-    #   pandas
+    # via pandas
 urllib3==2.2.1
-    # via
-    #   llm-utils
-    #   requests
+    # via requests
 watchdog==4.0.0
-    # via
-    #   llm-utils
-    #   mkdocs
-    #   streamlit
+    # via streamlit
 yarl==1.9.4
-    # via
-    #   aiohttp
-    #   llm-utils
+    # via aiohttp
