@@ -13,19 +13,6 @@
 		}
 	},
 
-    // "containerEnv": {
-    //     "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
-    // },
-	// nvidia cuda
-	//"runArgs": ["--runtime=nvidia", "--gpus", "all"], 
-
-	// change for the specific project
-	// can specify data location
-	"mounts": [
-		"source=/mnt/data/project/PerioperativeDataScience/LLM_Apps/IRB_Assistant,target=/data,type=bind,consistency=cached"
-
-	  ],
-
 	// Set *default* container specific settings.json values on container create.
 	  "settings": { 
 		"python.defaultInterpreterPath": "/usr/local/bin/python",
