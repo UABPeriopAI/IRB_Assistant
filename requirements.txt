@@ -58,7 +58,7 @@ frozenlist==1.4.1
     #   aiosignal
 gitdb==4.0.11
     # via gitpython
-gitpython==3.1.43
+gitpython==3.1.47
     # via streamlit
 greenlet==3.0.3
     # via sqlalchemy
@@ -162,8 +162,6 @@ pydeck==0.8.1b0
     # via streamlit
 pygments==2.17.2
     # via rich
-pyodbc==5.1.0
-    # via llm-utils
 pypandoc==1.13
     # via -r requirements.in
 python-dateutil==2.9.0.post0
@@ -214,7 +212,6 @@ st-pages==0.4.5
 streamlit==1.33.0
     # via
     #   -r requirements.in
-    #   llm-utils
     #   st-pages
 tenacity==8.2.3
     # via
